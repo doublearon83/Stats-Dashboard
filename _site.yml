@@ -1,2 +1,9 @@
 name: "Stats Dashboard"
+navbar:
+  title: "Dashboard"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Dashboard"
+      href: Dashboard.html
 output_dir: "docs"
