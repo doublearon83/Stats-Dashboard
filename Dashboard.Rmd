@@ -50,10 +50,10 @@ filter_select("Statistic", "Choose Strokes Stat (Bottom plot)", tdata_s, ~Statis
 ```
 
 
-Column {data-width=300}
+Column {data-width=600}
 -----------------------------------------------------------------------
 
-### {data-height=500} Plot of statistic percentage (%) by finishing place
+### Plot of statistic percentage (%) by finishing place
 
 ```{r}
 g <- ggplot(tdata_p,aes(Place,Percent,group=Statistic)) + 
@@ -79,3 +79,5 @@ ggplotly(h,tooltip = c("x", "y", "group"))%>%
            yaxis = list(rangemode="normal"))
 ```
 
+Column {data-width=400}
+-----------------------------------------------------------------------
