@@ -2,7 +2,7 @@
 title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: rows
+    orientation: columns
     vertical_layout: fill
 ---
 
@@ -49,10 +49,11 @@ filter_select("Statistic", "Choose % Stat (Top plot)", tdata_p, ~Statistic)
 filter_select("Statistic", "Choose Strokes Stat (Bottom plot)", tdata_s, ~Statistic)
 ```
 
-Row
+
+Column {data-width=300}
 -----------------------------------------------------------------------
 
-### Plot of statistic percentage (%) by finishing place
+### {data-height=500} Plot of statistic percentage (%) by finishing place
 
 ```{r}
 g <- ggplot(tdata_p,aes(Place,Percent,group=Statistic)) + 
@@ -64,9 +65,6 @@ ggplotly(g,tooltip = c("x", "y", "group"))%>%
     layout (
            yaxis = list(rangemode="normal"))
 ```
-
-Row
------------------------------------------------------------------------
 
 ### Plot of strokes saved by statistic percentage (%)
 
