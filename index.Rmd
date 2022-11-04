@@ -39,7 +39,7 @@ Stats Dashboard
 Inputs {.sidebar}
 -----------------------------------------------------------------------
 
-Use the boxes below to subset Elo ratings by player and year.
+Use the boxes below to subset statistics of interest into the two plots.
 
 ```{r}
 filter_select("Statistic", "Choose % Stat (Top plot)", tdata_p, ~Statistic)
@@ -52,7 +52,7 @@ filter_select("Statistic", "Choose Strokes Stat (Bottom plot)", tdata_s, ~Statis
 Row
 -----------------------------------------------------------------------
 
-### Plot of Top-25 Players Over Time (float cursor over line(s) for more info)
+### Plot of statistic percentage (%) by finishing place
 
 ```{r}
 g <- ggplot(tdata_p,aes(Place,Percent,group=Statistic)) + 
@@ -67,6 +67,8 @@ ggplotly(g,tooltip = c("x", "y", "group"))%>%
 
 Row
 -----------------------------------------------------------------------
+
+### Plot of strokes saved by statistic percentage (%)
 
 ```{r}
 h <- ggplot(tdata_s,aes(Percent,Strokes,group=Statistic)) + 

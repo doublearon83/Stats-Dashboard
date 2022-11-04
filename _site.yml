@@ -1,9 +1,7 @@
-name: "MyLabJournal"
+name: "Stats Dashboard"
 navbar:
-  title: "MyLabJournal"
+  title: "Stats Dashboard"
   left:
-    - text: "Home"
-      href: index.html
     - text: "Dashboard"
-      href: Stats_dashboard.html
+      href: index.html
 output_dir: "docs"
