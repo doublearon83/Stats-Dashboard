@@ -1,4 +1,10 @@
 ---
-title: "Dashboard Home"
+title: ""
 output: html_document
 ---
+
+<br>
+
+#### Click on the dashboard link in the menu above to access it.
+
+*IMPORTANT: This is only a draft and is not to be shared with others.*
