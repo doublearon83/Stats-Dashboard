@@ -1,6 +1,6 @@
-name: "Stats Dashboard, By Aaron Howard"
+name: "Stats Dashboard"
 navbar:
-  title: "Stats Dashboard"
+  title: "Stats Dashboard, By Aaron Howard"
   left:
     - text: "Home"
       href: index.html

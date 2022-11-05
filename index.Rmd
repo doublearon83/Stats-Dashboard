@@ -7,4 +7,4 @@ output: html_document
 
 #### Click on the dashboard link in the menu above to access it.
 
-*IMPORTANT: This is only a draft and is not to be shared with others.*
+**IMPORTANT:** *This is only a prototype and is not to be shared with others.*

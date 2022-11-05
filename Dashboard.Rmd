@@ -93,3 +93,18 @@ ggplotly(h,tooltip = c("x", "y","group"))%>%
 
 Column {data-width=550}
 -----------------------------------------------------------------------
+
+### {data-height=450}
+
+#### Methods and interpretation
+
+The predicted line is based on a linear model with a quadratic fit.  
+
+*Generally speaking, as finishing place increases the statistic percentages (C1P, C1R) decrease.*
+
+
+### {data-height=550}
+
+The predicted values (black dots) are based on a GLMM (generalized linear mixed effects model) that controls for tournament (random effect) and all of the major statistical categories.  This means, for example, that the change in strokes saved for C1R that you see in the plot is that value while all other statistics are held constant and the variation in scoring between events is considered.
+
+*As statistical percentage increases, strokes saved goes up.  This effect is STRONGEST for C1R.*
