@@ -53,7 +53,7 @@ filter_select("Statistic", "Choose % Stat (Top plot)", tdata_p, ~Statistic)
 filter_select("Statistic", "Choose Stroke Stat (Bottom plot)", tdata_s, ~Statistic)
 ```
 
-Column {data-width=600}
+Column {data-width=450}
 -----------------------------------------------------------------------
 
 ### Plot of average statistic percentage (%) by finishing place
