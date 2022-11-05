@@ -56,7 +56,7 @@ filter_select("Statistic", "Choose Stroke Stat (Bottom plot)", tdata_s, ~Statist
 Column {data-width=450}
 -----------------------------------------------------------------------
 
-### Plot of average statistic percentage (%) by finishing place
+### Plot of average statistic percentage (%) by finishing place (float cursor over plot for more info)
 
 ```{r}
 lm.mod<-lm(Percent ~ Place*Statistic+I(Place^2)*Statistic,data=placedata)
@@ -73,7 +73,7 @@ ggplotly(g,tooltip = c("group", "x", "y"))%>%
            yaxis = list(rangemode="normal"))
 ```
 
-### Plot of strokes saved by statistic percentage (%)
+### Plot of strokes saved by statistic percentage (%) (float cursor over plot for more info)
 
 ```{r}
 col=c(rep("black",100),rep("red",8))
@@ -98,13 +98,13 @@ Column {data-width=550}
 
 #### Methods and interpretation
 
-The predicted line is based on a linear model with a quadratic fit.  
+The predicted line is based on a linear model with a quadratic fit.  The lighter lines are the averages by finishing position.  
 
 *Generally speaking, as finishing place increases the statistic percentages (C1P, C1R) decrease.*
 
 
 ### {data-height=550}
 
-The predicted values (black dots) are based on a GLMM (generalized linear mixed effects model) that controls for tournament (random effect) and all of the major statistical categories.  This means, for example, that the change in strokes saved for C1R that you see in the plot is that value while all other statistics are held constant and the variation in scoring between events is considered.
+The predicted values (black dots) are based on a GLMM (generalized linear mixed effects model) that controls for tournament (random effect) and all of the major statistical categories.  This means, for example, that the change in strokes saved for C1R that you see in the plot is that value while all other statistics are held constant and the variation in scoring between events is considered.  The red dots are the observed values for winners, top-10, top-20, and top-50.
 
 *As statistical percentage increases, strokes saved goes up.  This effect is STRONGEST for C1R.*
