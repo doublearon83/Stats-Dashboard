@@ -91,5 +91,5 @@ ggplotly(h,tooltip = c("x", "y","group"))%>%
            yaxis = list(rangemode="normal"))
 ```
 
-Column {data-width=400}
+Column {data-width=550}
 -----------------------------------------------------------------------
