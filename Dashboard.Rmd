@@ -32,7 +32,7 @@ strokedata <- strokedata[,-1]
 names(strokedata) <- c("Percent", "Statistic", "Strokes")
 strokedata$Strokes <- round(strokedata$Strokes,1)
 strokedata$Percent <- round(strokedata$Percent,1)
-strokedata$Type <- c(rep("Best-fit",100),rep("Observed",8))
+strokedata$Type <- c(rep("Prediction",100),rep("Observed",8))
 tdata_s <- SharedData$new(strokedata)
 ```
 
@@ -59,8 +59,11 @@ Column {data-width=600}
 ### Plot of average statistic percentage (%) by finishing place
 
 ```{r}
+lm.mod<-lm(Percent ~ Place*Statistic+I(Place^2)*Statistic,data=placedata)
+Prediction <- predict(lm.mod)
 g <- ggplot(tdata_p,aes(Place,Percent,group=Statistic)) + 
-  geom_line(aes(color=Statistic)) +
+  geom_line(aes(color=Statistic),alpha=0.25) +
+  geom_line(aes(y=Prediction,color=Statistic)) +
   scale_color_manual(values = c("C1P (%)" = "black", "C1R (%)" = "red"))+
   xlab("Finishing Place") +
   ylab("Statistic Percentage (%)")
@@ -78,10 +81,7 @@ s <- c(rep(1,100),rep(2,8))
 al <- c(rep(0.5,100),rep(1,8))
 h <- ggplot() + 
   geom_point(data=tdata_s,aes(Percent,Strokes,group=Statistic,color=Type),size=s,alpha=al) +
-  scale_color_manual(values = c("Best-fit" = "black", "Observed" = "red"))+
-#  scale_color_discrete(name="Statistic",
-#                       breaks=c("Best-fit","Observed"),
-#                       labels=c("Best-fit","Observed"))+
+  scale_color_manual(values = c("Prediction" = "black", "Observed" = "red"))+
   xlab("Statistic Percentage (%)") +
   xlim(30,100)+
   ylab("Strokes Saved")
